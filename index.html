@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="a-fullscreen" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui,viewport-fit=cover">
+  <meta aframe-injected="" name="mobile-web-app-capable" content="yes">
+  <meta aframe-injected="" name="theme-color" content="black">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Computer Graphics - A-Frame Task">
+  <meta name="keywords" content="A-Frame, VR, 3D">
+  <meta name="author" content="Spyridon Eftychios Kokotos">
+  <title>Computer Graphics - A-Frame Task</title>
+  <script src="/src/scripts/flagAudioToggle.js"></script>
+  <script src="/src/scripts/aframe.min.js"></script>
+  <script src="/src/scripts/aframe-extras.min.js"></script>
+  <script src="/src/scripts/a-water.min.js"></script>
+  <script src="/src/scripts/mover.js"></script>
+  <script src="/src/scripts/aframe-cursor-animator.js"></script>
+  <script src="/src/scripts/aframe-raycaster.js"></script>
+  <script src="/src/scripts/olive-mover.js"></script>
+  <script src="/src/scripts/cloud-mover.js"></script>
+  <script src="/src/scripts/a-frame-environment-component.min.js"></script>
+  <script src="/src/scripts/popeye-mover.js"></script>
+  <script src="/src/scripts/animation-controller.js"></script>
+  <script src="/src/scripts/day-night-toggle.js"></script>
+  <script src="/src/scripts/sailing-boat-mover.js"></script>
+  <script src="/src/scripts/sailing-skipper-mover.js"></script>
+  <script src="/src/scripts/animation-controller-second.js"></script>
+  <script src="/src/scripts/flagAudioToggle.js"></script>
+  <script src="/src/scripts/christmas-tree.js"></script>
+  <script src="/src/scripts/garry-sound-trigger.js"></script>
+  <script src="/src/scripts/spongebob-sound-trigger.js"></script>
+  <script src="/src/scripts/squidward-sound-trigger.js"></script>
+  <script src="/src/scripts/patrick-sound-trigger.js"></script>
+  <style type="text/css" data-href="src/css/aframe.css"></style>
+  <style type="text/css" data-href="src/css/rStats.css"></style>
+  <style type="text/css" data-href="src/css/styles.css"></style>
+  <link rel="stylesheet" href="/src/css/help.css">
+  <link rel="stylesheet" href="/src/css/welcome.css">
+  <link rel="stylesheet" href="/src/css/array.css">
+  <link rel="icon" href="/src/favicon/favicon.ico" type="image/x-icon">
+  
+</head>
+<body>
+
+  <!--Properties for the Help Button-->
+<a id="helpIcon">
+  <img src="/src/images/help.png" alt="Help" style="width: 50px; height: 50px;">
+</a>
+
+<!--Properties for the Help UI-->
+<div id="helpUI" style="display:none;">
+  <div id="helpMessage">
+    <a href="https://ionio.gr" target="_blank"> <img class="logoTopLeft" src="/src/images/uni-logo.png" alt="Logo" id="logoTopLeft"></a> 
+    <a href="https://di.ionio.gr" target="_blank"> <img class="logoTopRight" src="/src/images/di.jpg" alt="Logo" id="logoTopRight"></a> 
+    <h2>Βοήθεια & Υποστήριξη</h2>
+    <p> Καλώς ορίσατε στην σελίδα βοήθειας & υποστήριξης</p>
+    <p> Για την σωστή λειτουργία των 3D κινήσεων, ήχων καθώς και διάδρασης θα πρέπει να ακολουθήσετε τα παρακάτω:</p>
+    
+    <!--Properties for the Array-->
+    <table id="helpTable">
+      <tr>
+        <td>1</td>
+        <td>Χρησιμοποιείστε την σελίδα μέσω υπολογιστή και όχι κινητού για να μπορείτε να κινηθείτε στον χώρο.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Όλα τα αντικείμενα εκτός των σπιτιών του Patrick, του Spongebob & του Squidward υποστηρίζουν animation & εκπομπή ήχων.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Περιπλανηθείτε στον χώρο με τα πλήκτρα W,A,S,D ή με τα γνωστά βελάκια.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Για την καλύτερη απόδοση των γραφικών, καλό θα είναι να ενεργοποιήσετε εκ των προτέρων την επιλογή: "Use hardware acceleration when available"</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Σε περίπτωση που παρατηρήσετε "κολλήματα" και frame drops κατά την περιήγησή σας, φορτώστε ξανά την σελίδα, περιηγηθείτε σε όλο τον χάρτη και αφήστε τα κολλήματα να ξεκολλήσουν. Αυτό συμβαίνει γιατί είναι μεγάλα τα μοντέλα και η κάρτα γραφικών του φυλλομετρητή σας ζορίζεται.</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Επειδή η σελίδα εκπέμπει ηχητικά εφέ, θα πρέπει να έχετε ενεργοποιημένο το <bold>autoplay</bold> & τον <bold> ήχο</bold> για να τα ακούσετε.</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>H Eλληνική σημαία καθώς και το Χριστουγεννιάτικο δέντρο, αν τα κλικάρετε δεύτερη φορά, σταματάει να παίζει η μουσική τους.</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Eπειδή τα 3D μοντέλα είναι "ευαίσθητα" με το framework A-Frame, παρακαλείστε, να δώσετε ιδιαίτερη προσοχή στα κλίκ που κάνετε στα αντικείμενα. Ειδικά στο ιστιοπλοϊκό με τον καπετάνιο, διότι αν επιλεχθεί δύο φορές ταυτόχρονα, θα δείτε τον καπετάνιο να βγαίνει εκτός πορείας, παρόλο που ακολουθεί το σκάφος.</td>
+      </tr>
+    </table>
+    
+    <p>Σε περίπτωση που έρθετε αντιμέτωποι με κάποιο νέο σφάλμα, παρακαλώ, να επικοινωνήσετε με τον υπεύθυνο υλοποίησης.</p>
+
+    <footer id="helpFooter">
+      <div class="footer-content">
+        <p>Powered by: A-Frame</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© Σπυρίδων Ευτύχιος Κοκοτός © | Email: inf2021098@ionio.gr 
+        </p>
+      </div>
+    </footer>
+    <p>Πατήστε το παρακάτω κουμπί για να πραγματοποιήσετε έξοδο από το μενού βοήθειας.</p>
+    <button id="closeHelp">Κλείσιμο Βοήθειας</button> 
+  </div>
+</div>
+
+<!--Properties of the Help Script-->
+<script>
+  document.getElementById('helpIcon').addEventListener('click', function () {
+    document.getElementById('helpUI').style.display = 'block'; 
+    document.getElementById('welcomeUI').style.display = 'none'; 
+  });
+
+  document.getElementById('closeHelp').addEventListener('click', function () {
+    document.getElementById('helpUI').style.display = 'none'; 
+  });
+</script>
+
+
+  <!--Properties for the Welcome Message-->
+  <div id="welcomeUI">
+    <div id="welcomeMessage">
+      <a href="https://ionio.gr" target="_blank"> <img class="logoTopLeft" src="/src/images/uni-logo.png" alt="Logo" id="logoTopLeft"></a> 
+      <a href="https://di.ionio.gr" target="_blank"> <img class="logoTopRight" src="/src/images/di.jpg" alt="Logo" id="logoTopRight"></a> 
+      <img src="/src/images/main.jpg" alt="Main Image" style="width: 300px; height: 300px; border-radius: 50%; display: block; margin: 0 auto; position: absolute; top: 50px; left: 50%; transform: translateX(-50%);">
+      <h2>Καλώς ορίσατε!</h2>
+      <p>Κλικάρετε στο παρακάτω κουμπί για να ξεκινήσετε την VR εμπειρία σας.</p>
+      <button id="enterVR">Enter VR</button> 
+    </div>
+    <footer id="welcomeFooter">
+      <div class="footer-content">
+        <p>Ιόνιο Πανεπιστήμιο | Τμήμα Πληροφορικής | Μάθημα: Γραφικά Υπολογιστών | Ακαδημαϊκό έτος: 2023 - 2024 | Κέρκυρα |</p>
+      </div>
+      <div class="footer-bottom">
+        <p>Powered by: A-Frame</p>
+        <p>© Σπυρίδων Ευτύχιος Κοκοτός | inf2021098 ©</p>
+      </div>
+    </footer>
+  </div>
+
+  <!--Properties of the Welcome Script-->
+  <script>
+    document.getElementById('enterVR').addEventListener('click', function () {
+    document.getElementById('welcomeUI').style.display = 'none';
+    });
+  </script>
+
+  <!--Properties for the Environment-->
+  <a-scene environment="preset: default; grid: none; fog: none; lighting: none; shadow: none; ground: none; groundYScale: 0; groundTexture: none; horizonColor: #000; skyColor: #000; lighting: none; width: 100; height: 100;">
+  
+  <!--Properties for the Camera-->  
+  <a-camera>
+    <a-cursor></a-cursor>
+  </a-camera>
+
+  <!--Properties for the Fog-->
+  <a-scene fog="type: linear; color: #a3d0ed; near:20; far:55;">
+
+    <!--Properties for Ocean floor-->
+    <a-ocean width="100" depth="100" density="30" opacity="1" position="0 0.9 0" shadow="receive: true; cast: true;"></a-ocean>
+
+    <!--Properties for the Background Music-->
+    <audio id="backgroundMusic" autoplay loop>
+      <source src="/src/audio/seagull-horn.mp3" type="audio/mp3" volume="1000">
+    </audio>
+
+    <!--Properties for the Name Tag-->
+    <a-text value="Spyros Kokotos" position="-39 1.8 -24" color="purple" scale="4 4 4"></a-text>
+
+    <!--Properties for the Christmas Tree-->
+    <a-entity position="-35 1 -26" scale="1 1 1" rotation="0 90 0" gltf-model="#tree" id="#tree" animation-mixer tree-interaction></a-entity>
+
+    <!--Properties for the Greek Flag-->
+    <a-entity position="-38 1.3 -26" scale="3 3 3" rotation="0 -90 0" gltf-model="#flag" id="#flag" animation-mixer flag-interaction></a-entity> 
+
+    <!--Properties for the Boat-->
+    <a-entity position="-19 0.35 -33" gltf-model="#boat" clickable animation="property: position; to: -19 0.35 -33.5; dir: alternate; dur: 1000; easing: linear; loop: true;" clickable ></a-entity>
+
+    <!--Properties for the Sailing Boat-->
+    <a-entity position="41 2 30" gltf-model="#sailing-boat" rotation="0 -96 0" scale="0.030 0.030 0.030" clickable sailing-boat-mover ></a-entity>
+
+    <!--Properties for the Popeye-->
+    <a-entity position="-16.2 3 -33" scale="0.7 0.7 0.7" gltf-model="#popeye" id="#popeye" clickable></a-entity>
+
+    <!--Properties for the Olive-->
+    <a-entity position="-29.5 1.41 -32" scale="0.010 0.010 0.010" rotation="0 98 0" gltf-model="#olive" id="#olive"clickable olive-mover></a-entity>
+
+    <!--Properties for the Clouds-->
+    <a-entity id="#clouds" position="-19 1 -33" gltf-model="#clouds" rotation="0 98 0" clickable animation="property: position; to: -19 1 -33; dir: alternate; dur: 1000; easing: linear; loop: true;"  animation-mixer clickable cloud-mover></a-entity>
+
+    <!--Properties for the Lighthouse-->
+    <a-entity position="-40 1.3 -30" scale="10 12 10" rotation="0 169 0" gltf-model="#lighthouse" id="#lighthouse" clickable day-night-toggle></a-entity>
+
+    <!--Properties for the Spongebob's House-->
+    <a-entity position="43 0.6 10" scale="3 3 3" rotation="0 -100 0" gltf-model="#sponge-bob-house" id="#sponge-bob-house" clickable></a-entity>
+
+    <!--Properties for the first Buoy-->
+    <a-entity position="38 0.6 20" scale="0.6 0.6 0.6" rotation="0 -100 0" gltf-model="#buoy" id="#buoy" clickable></a-entity>
+
+    <!--Properties for the second Buoy-->
+    <a-entity position="33 0.6 40" scale="0.6 0.6 0.6" rotation="0 -100 0" gltf-model="#buoy" id="#buoy" clickable></a-entity>
+
+    <!--Properties for the Squidward's House-->
+    <a-entity position="43 0.6 -10" scale="3 3 3" rotation="0 -94 0" gltf-model="#squidward-house" id="#squidward-house" clickable></a-entity>
+
+    <!--Properties for the Patrick's House-->
+    <a-entity position="43 0.4 -30" scale="3 3 3" rotation="0 -94 0" gltf-model="#patrick-house" id="#patrick-house" clickable></a-entity>
+ 
+    <!--Properties for the first Wooden Pier-->
+    <a-entity position="-31 0 -31.5" scale="5 10 5" rotation="0 100 0" gltf-model="#wooden-pier" id="#wooden-pier"></a-entity>
+
+    <!--Properties for the second Wooden Pier-->
+    <a-entity position="32.6 -0.2 -10.5" scale="5 10 5" rotation="0 -91.5 0" gltf-model="#wooden-pier" id="#wooden-pier"></a-entity>
+
+    <!--Properties for the Squidward-->
+    <a-entity position="32.6 2.6 -10.5" scale="0.005 0.005 0.005" rotation="0 -98 0" gltf-model="#squidward" id="#squidward"  animation-mixer  clickable squidward-mover squidward-interaction></a-entity>
+
+    <!--Properties for the third Wooden Pier-->
+    <a-entity position="34.2 -0.2 8.3" scale="5 10 5" rotation="0 -100 0" gltf-model="#wooden-pier" id="#wooden-pier"></a-entity>
+
+    <!--Properties for the Spongebob-->
+    <a-entity position="32.6 0.98 6.8" scale="0.6 0.6 0.6" rotation="0 -98 0" gltf-model="#spongebob" id="#spongebob" clickable spongebob-mover spongebob-interaction></a-entity>
+
+    <!--Properties for the Garry-->
+    <a-entity position="32.6 1.38 9.5" scale="0.050 0.041 0.050" rotation="0 -100 0" gltf-model="#garry" id="#garry" clickable garry-mover garry-interaction></a-entity>
+
+    <!--Properties for the fourth Wooden Pier-->
+    <a-entity position="33.2 -0.2 -32.1" scale="5 10 5" rotation="0 -100 0" gltf-model="#wooden-pier" id="#wooden-pier"></a-entity>
+
+    <!--Properties for the Patrick-->
+    <a-entity position="32.6 2.5 -32.2" scale="0.3 0.3 0.3" rotation="0 -100 0" gltf-model="#patrick" id="#patrick" clickable patrick-mover patrick-interaction></a-entity>
+
+    <!--Properties for the Sailor-->
+    <a-entity position="35 2.8 27.3" scale="0.5 0.5 0.5" rotation="0 -100 0" gltf-model="#sailor" id="#sailor" clickable sailing-skipper-mover></a-entity>
+
+    <!--Properties for the first Seagull-->
+    <a-entity position="-29.5 5 -32" scale="1 1 1" rotation="0 180 0" gltf-model="#seagull" id="#seagull" animation-mixer></a-entity>
+
+    <!--Properties for the second Seagull-->
+    <a-entity position="-26.5 7 -32" scale="1 1 1" rotation="0 180 0" gltf-model="#seagull" id="#seagull" animation-mixer></a-entity>
+
+    <!--Properties for the third Seagull-->
+    <a-entity position="-24.5 9 -32" scale="1 1 1" rotation="0 180 0" gltf-model="#seagull" id="#seagull" animation-mixer></a-entity>
+
+    <!--Properties for the fourth Seagull-->
+    <a-entity position="-22.5 11 -32" scale="1 1 1" rotation="0 180 0" gltf-model="#seagull" id="#seagull" animation-mixer></a-entity>
+
+    <!--Properties for the sound of Seagulls-->
+    <a-sound src="#seagullsSound" autoplay="true" loop="true" volume="1"></a-sound>
+
+    <!-- Properties for the Invisible Circle -->
+    <a-entity id="invisibleCircle" geometry="primitive: circle; radius: 5;" position="-40 0 -33.5" rotation="-90 0 0" material="visible: false;"></a-entity>
+
+    <!-- Properties for the Rocks on the Invisible Circle -->
+    <a-entity position="-40 0.1 -28.5" scale="12 1.8 12" gltf-model="#rocks"></a-entity>
+    <a-entity position="-41.5 0.1 -34" scale="12 1.8 12" gltf-model="#rocks"></a-entity>
+
+    <!--Properties for the Assets-->
+    <a-assets>
+      <img id="skyTexture" src="/src/images/sky.jpg">
+      <a-asset-item id="boat" src="/src/models/ship.glb"></a-asset-item>
+      <a-asset-item id="lighthouse" src="/src/models/lighthouse.glb"></a-asset-item>
+      <a-asset-item id="rocks" src="/src/models/rocks.glb"></a-asset-item>
+      <a-asset-item id="wooden-pier" src="/src/models/wooden_pier.glb"></a-asset>
+      <a-asset-item id="popeye" src="/src/models/popeye.glb"></a-asset-item>
+      <a-asset-item id="olive" src="/src/models/olive.glb"></a-asset-item>
+      <a-asset-item id="clouds" src="/src/models/clouds.glb"></a-asset-item>
+      <a-asset-item id="seagull" src="/src/models/seagull.glb"></a-asset-item>
+      <a-asset-item id="sponge-bob-house" src="/src/models/spongebob_house.glb"></a-asset-item>
+      <a-asset-item id="squidward-house" src="/src/models/squidwards_house.glb"></a-asset-item>
+      <a-asset-item id="patrick-house" src="/src/models/patricks_house.glb"></a-asset-item>
+      <a-asset-item id="patrick" src="/src/models/patrick.glb"></a-asset-item>
+      <a-asset item id="squidward" src="/src/models/squidward_spongebob.glb"></a-asset>
+      <a-asset item id="spongebob" src="/src/models/sponge_bob.glb"></a-asset>
+      <a-asset item id="garry" src="/src/models/garry_the_snail.glb"></a-asset>
+      <a-asset item id="sailing-boat" src="/src/models/sailing-boat.glb"></a-asset>
+      <a-asset item id="buoy" src="/src/models/buoy.glb"></a-asset>
+      <a-asset item id="tree" src="/src/models/neon_christmas_tree.glb"></a-asset>
+      <a-asset item id="sailor" src="/src/models/jolly_captain.glb"></a-asset>
+      <a-asset item id="flag" src="/src/models/scene.gltf"></a-asset>
+      <audio id="click-sound" src="/src/audio/ship-horn.mp3"></audio>
+      <audio id="olive-click" src="/src/audio/oh-popeye.mp3"></audio>
+      <audio id="click-horn" src="/src/audio/drunken-sailor.mp3"></audio>
+      <audio id="greek-horn" src="/src/audio/greek-anthem.mp3"></audio>
+      <audio id="tree-horn" src="/src/audio/tree-song.mp3"></audio>
+      <audio id="patrick-horn" src="/src/audio/patrick.mp3"></audio>
+      <audio id="spongebob-horn" src="/src/audio/spongebob.mp3"></audio>
+      <audio id="garry-horn" src="/src/audio/garry.mp3"></audio>
+      <audio id="squidward-horn" src="/src/audio/squidward.mp3"></audio>
+    </a-assets>
+
+  </a-scene>
+
+
+</body>
+</html>
